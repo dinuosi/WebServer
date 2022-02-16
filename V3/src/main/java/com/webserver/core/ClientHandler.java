@@ -1,7 +1,9 @@
 package com.webserver.core;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.net.Socket;
 
 /**
@@ -15,10 +17,19 @@ public class ClientHandler implements Runnable {
     public void run() {
         try {
             InputStream in = socket.getInputStream();
+            StringBuilder builder = new StringBuilder();
             int d;
+            char pre='a',cur = 'a';
             while ((d=in.read())!=-1){
-                System.out.print((char) d);
+                cur =(char) d;
+                if (pre==1&cur==10){
+                    break;
+                }
+                builder.append(cur);
+                pre=cur;
             }
+            String line = builder.toString();
+            System.out.println(line);
 
 
 
