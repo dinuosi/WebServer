@@ -16,28 +16,29 @@ import java.net.Socket;
 public class WebServerApplication {
     private ServerSocket serverSocket;
 
-    public WebServerApplication(){
+    public WebServerApplication(){//构造器，new对象的时候就执行了
         try {
             System.out.println("正在启动服务端...");
             serverSocket = new ServerSocket(8088);
-            System.out.println("服务端启动完毕！");
+            System.out.println("服务端启动完毕!");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void start(){
-        System.out.println("等待客户端连接...");
+    public void start(){//普通方法
         try {
+            System.out.println("等待客户端链接...");
             Socket socket = serverSocket.accept();
+            System.out.println("一个客户端链接了!");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("一个客户端连接了");
+
     }
 
     public static void main(String[] args) {
-        WebServerApplication web = new WebServerApplication();
-        web.start();
+        WebServerApplication server = new WebServerApplication();
+        server.start();
     }
 }
