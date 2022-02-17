@@ -13,6 +13,8 @@
         <module>V2</module>
         <module>V3</module>
         <module>V4</module>
+        <module>V5</module>
+        <module>V6</module>
     </modules>
 
     <properties>

@@ -38,8 +38,6 @@ public class WebServerApplication {
             Thread t = new Thread(handler);
             t.start();
 
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }

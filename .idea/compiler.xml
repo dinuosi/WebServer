@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="V6" />
+        <module name="V1" />
         <module name="V2" />
         <module name="V3" />
-        <module name="V1" />
+        <module name="V4" />
+        <module name="V5" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,0 +1,10 @@
+重构
+进行功能个拆分,将ClientHandler中第一个环节解析请求的细节拆分出去,使得
+ClientHandler仅关心处理一次HTTP交互的流程控制.
+
+实现:
+1:新建一个包:com.webserver.http
+2:在http包下新建类:HttpServletRequest 请求对象
+  使用这个类的每一个实例表示客户端发送过来的一个HTTP请求
+3:在HttpServletRequest的构造方法中完成解析请求的工作
+4:ClientHandler第一步解析请求只需要实例化一个HttpServletRequest即可.
