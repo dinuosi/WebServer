@@ -10,7 +10,7 @@ import java.util.Map;
  * 请求对象
  * 该类的每一个实例用于表示HTTP协议规定的客户端发过来的一个请求内容
  * 每个请求由三部分构成：
- * 请求航，消息头，消息正文
+ * 请求行，消息头，消息正文
  */
 public class HttpServletRequest {
     //请求行的相关信息
