@@ -1,0 +1,8 @@
+重构代码
+将ClientHandler中处理请求的操作拆分出去
+
+实现:
+1:在com.webserver.core包下新建类:DispatcherServlet
+  并定义service方法,用来处理请求
+2:将ClientHandler处理请求的操作移动到service方法中去
+3:ClientHandler通过调用DispatcherServlet的service完成处理请求环节.
