@@ -13,6 +13,11 @@ import java.net.Socket;
  * 2:负责与客户端(通常是浏览器)完成TCP链接，并基于HTTP协议进行交互，使得客户端可以
  *   通过网络远程调用容器中的某个网络应用
  */
+/*
+                http://localhost:8088/myweb/index123.html
+                http://localhost:8088/myweb/index.html
+                http://localhost:8088
+*/
 public class WebServerApplication {
     private ServerSocket serverSocket;
 
@@ -28,14 +33,16 @@ public class WebServerApplication {
 
     public void start(){
         try {
-            System.out.println("等待客户端链接...");
-            Socket socket = serverSocket.accept();
-            System.out.println("一个客户端链接了!");
-            //启动一个线程负责与该客户端交互
-            ClientHandler handler = new ClientHandler(socket);
-            Thread t = new Thread(handler);
-            t.start();
 
+            while (true) {
+                System.out.println("等待客户端链接...");
+                Socket socket = serverSocket.accept();
+                System.out.println("一个客户端链接了!");
+                //启动一个线程负责与该客户端交互
+                ClientHandler handler = new ClientHandler(socket);
+                Thread t = new Thread(handler);
+                t.start();
+            }
 
 
         } catch (IOException e) {
